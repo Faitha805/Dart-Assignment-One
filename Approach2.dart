@@ -1,9 +1,9 @@
 // Apoproach 2
 class Student {
   String? name;
-  int? math;
-  int? science;
-  int? english;
+  int? mark1;
+  int? mark2;
+  int? mark3;
 
   // Constructor will required but nullable attributes given a default value
   Student({
@@ -15,10 +15,10 @@ class Student {
 
 
   double average() {
-    int m = math ?? 0;
-    int s = science ?? 0;
-    int e = english ?? 0;
-    return (m + s + e) / 3.0;
+    int markOne = mark1 ?? 0;
+    int markTwo = mark2 ?? 0;
+    int markThree = mark3 ?? 0;
+    return (markOne + markTwo + markThree) / 3.0;
   }
 
   String grade() {
@@ -33,7 +33,7 @@ class Student {
 
   void displayResult() {
     print('Student: ${name ?? 'Unknown'}');
-    print('Scores: Math=${math ?? 0}, Science=${science ?? 0}, English=${english ?? 0}');
+    print('Scores: mark1=${mark1 ?? 0}, mark2=${mark2 ?? 0}, mark3=${mark3 ?? 0}');
     print('Average: ${average().toStringAsFixed(2)}');
     print('Grade: ${grade()}');
   }
@@ -41,6 +41,6 @@ class Student {
 
 void main() {
   // Example usage
-  var s = Student(name: null, math: null, science: 75, english: 88);
-  s.displayResult();
+  var student = Student(name: null, mark1: null, mark2: 75, mark3: 88);
+  student.displayResult();
 }
